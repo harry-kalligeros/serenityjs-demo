@@ -1,0 +1,13 @@
+<table class="table table-responsive container">
+	<tr *ngFor="let row of schedule" class="row">
+		<td class="col-sm-3">
+			{{ row.eventTime }}
+		</td>
+		<td class="col-sm-3">
+			{{ row.eventTitle }}
+		</td>
+		<td class="col-sm-6">
+			{{ row.eventDescription }}
+		</td>
+	</tr>
+</table>

@@ -1,0 +1,16 @@
+<h1 class="speakers-title">Speakers</h1>
+<div class="row">
+	<div class="col-md-3">
+		<label class="control-label">Search Speaker</label>
+		<input class="form-control" type="text"     (keyup)="searchTerm$.next($event.target.value)">
+	</div>
+	<div class="col-md-9">
+		<div class="row">
+			<div class="col-sm-4" *ngFor="let row of filteredSpeakers">
+				<img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image"
+				    width="140" height="140">
+				<h4>{{ row.firstName }} {{ row.lastName }}</h4>
+			</div>
+		</div>
+	</div>
+</div>

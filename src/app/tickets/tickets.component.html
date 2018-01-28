@@ -1,0 +1,146 @@
+<h1>Tickets to AT Conference</h1>
+
+<ul class="nav nav-tabs">
+	<li class="nav-item">
+		<a class="nav-link" [class.active]="!userOption || userOption==='talks'" href="#" (click)="selectEvent($event, 'talks')">Talks</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" [class.active]="userOption==='workshops'" href="#" (click)="selectEvent($event, 'workshops')">Workshops</a>
+	</li>
+</ul>
+<div [ngSwitch]='userOption'>
+	<div class="card" style="auto" *ngSwitchCase="'workshops'">
+		<div class="card-body">
+			<h5 class="card-title">Workshops</h5>
+			<h6 class="card-subtitle mb-2 text-muted">June 10th</h6>
+
+			<table class="table table-striped">
+				<thead>
+					<th class="col-sm-12" colspan="3">
+						<p class="pull-right">Quantity</p>
+					</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="col-sm-6">
+							<h4>Workshop A</h4>
+							<p class="small">
+								Id consequat irure anim nostrud nulla non dolor officia ullamco aute officia sit. Duis occaecat ad cillum Lorem commodo nulla
+								nulla esse veniam culpa officia occaecat. Dolor anim reprehenderit cillum culpa ad do mollit consectetur enim occaecat
+								cillum.
+							</p>
+						</td>
+						<td class="col-sm-4" style="min-width:90px;">
+							&euro; 40.00
+						</td>
+						<td class="col-sm-2">
+							<input type="number" style="width: 60px;" />
+						</td>
+					</tr>
+					<tr>
+						<td class="col-sm-6">
+							<h4>Workshop B</h4>
+							<p class="small">
+								Id consequat irure anim nostrud nulla non dolor officia ullamco aute officia sit. Duis occaecat ad cillum Lorem commodo nulla
+								nulla esse veniam culpa officia occaecat. Dolor anim reprehenderit cillum culpa ad do mollit consectetur enim occaecat
+								cillum.
+							</p>
+						</td>
+						<td class="col-sm-4">
+							&euro; 40.00
+						</td>
+						<td class="col-sm-2">
+							<input type="number" style="width: 60px;" />
+						</td>
+					</tr>
+					<tr>
+						<td class="col-sm-6">
+							<h4>Workshop C</h4>
+							<p class="small">
+								Id consequat irure anim nostrud nulla non dolor officia ullamco aute officia sit. Duis occaecat ad cillum Lorem commodo nulla
+								nulla esse veniam culpa officia occaecat. Dolor anim reprehenderit cillum culpa ad do mollit consectetur enim occaecat
+								cillum.
+							</p>
+						</td>
+						<td class="col-sm-4">
+							&euro; 40.00
+						</td>
+						<td class="col-sm-2">
+							<input type="number" style="width: 60px;" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="card" style="auto" *ngSwitchDefault>
+		<div class="card-body">
+			<h5 class="card-title">Talks</h5>
+			<h6 class="card-subtitle mb-2 text-muted">June 11th</h6>
+
+			<table class="table table-striped">
+				<thead>
+					<th class="col-sm-12" colspan="3">
+						<p class="pull-right">Quantity</p>
+					</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="col-sm-6">
+							<h4>Early tickets</h4>
+							<p class="small">
+								Id consequat irure anim nostrud nulla non dolor officia ullamco aute officia sit. Duis occaecat ad cillum Lorem commodo nulla
+								nulla esse veniam culpa officia occaecat. Dolor anim reprehenderit cillum culpa ad do mollit consectetur enim occaecat
+								cillum.
+							</p>
+						</td>
+						<td class="col-sm-4" style="min-width:90px;">
+							&euro; 40.00
+						</td>
+						<td class="col-sm-2">
+							<input type="number" style="width: 60px;" />
+						</td>
+					</tr>
+					<tr>
+						<td class="col-sm-6">
+							<h4>Regular Tickets</h4>
+							<p class="small">
+								Id consequat irure anim nostrud nulla non dolor officia ullamco aute officia sit. Duis occaecat ad cillum Lorem commodo nulla
+								nulla esse veniam culpa officia occaecat. Dolor anim reprehenderit cillum culpa ad do mollit consectetur enim occaecat
+								cillum.
+							</p>
+						</td>
+						<td class="col-sm-4">
+							&euro; 60.00
+						</td>
+						<td class="col-sm-2">
+							<input type="number" style="width: 60px;" />
+						</td>
+					</tr>
+					<tr>
+						<td class="col-sm-6">
+							<h4>VIP Tickets</h4>
+							<p class="small">
+								Id consequat irure anim nostrud nulla non dolor officia ullamco aute officia sit. Duis occaecat ad cillum Lorem commodo nulla
+								nulla esse veniam culpa officia occaecat. Dolor anim reprehenderit cillum culpa ad do mollit consectetur enim occaecat
+								cillum.
+							</p>
+						</td>
+						<td class="col-sm-4" style="min-width: 100px;">
+							&euro; 240.00
+						</td>
+						<td class="col-sm-2">
+							<input type="number" style="width: 60px;" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="row" style="margin-bottom: 80px">
+	<div class="col-xs-12">
+		<a class="btn btn-lg btn-info" href="#" (click)="register($event)">Continue</a>
+	</div>
+</div>
+<app-registration *ngIf="isRegistrationFormShown"></app-registration>
