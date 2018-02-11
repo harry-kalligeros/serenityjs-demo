@@ -3,19 +3,31 @@ import { serenity } from 'serenity-js';
 import { Start } from '../../screenplay/tasks/start';
 import { expect } from '../../expect';
 import { NavigateToMenu } from '../../screenplay/tasks/navigate-to-menu';
+import { given, when, binding } from 'cucumber-tsflow';
+import { World } from '../support/world';
+import { Stage } from 'serenity-js/lib/screenplay-protractor';
 
-function NavigationSteps() {
+@binding([World])
+class NavigationSteps {
 
-	this.Given(/that (.*) visits the conference page$/, function (name: string) {
+	stage: Stage;
+
+	constructor(protected world: World) {
+		this.stage = this.world.stage;
+	}
+
+	@given(/that (.*) visits the conference page$/)
+	visitTheConferencePage(name: string) {
 			return this.stage.theActorCalled(name).attemptsTo(
 				Start.withTheConferenceHomepage());
-	});
+	}
 
-	this.When(/^\s?he navigates to menu called '(.*)'$/, function (name: string) {
+	@when(/^\s?he navigates to menu called '(.*)'$/)
+	navigateToMenuCalled(name: string) {
 		return this.stage.theActorInTheSpotlight().attemptsTo(
 			NavigateToMenu.called(name)
 		);
-	});
+	}
 }
 
 export = NavigationSteps;

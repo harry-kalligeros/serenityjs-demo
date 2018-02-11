@@ -1,12 +1,13 @@
 import { serenity } from 'serenity-js';
 import { Actors } from '../../screenplay/index';
+import { Stage } from 'serenity-js/lib/screenplay-protractor';
+import { timeout } from 'q';
 
 
-export = function () {
+export class World {
 
-	this.setDefaultTimeout(60 * 1000);
+	public get stage(): Stage {
+		return serenity.callToStageFor(new Actors());
+	}
+}
 
-	this.World = function () {
-		this.stage = serenity.callToStageFor(new Actors());
-	};
-};
