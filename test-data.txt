@@ -1,0 +1,26 @@
+[
+  '{{repeat(1, 9)}}',
+  {
+    fullName: '{{firstName()}} {{surname()}}',
+    nickname: function(tags, index){ var s=tags.surname();
+                                    return tags.firstName().toLowerCase() +
+                                    		s.charAt(0).toUpperCase() +
+                                      		s.slice(1); },
+    email: '{{email()}}',
+    company: '{{company().toUpperCase()}}',
+    phone: '+1 {{phone()}}',
+    address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+    city: '{{city()}}',
+    zip: '{{integer(10000,99999)}}',
+    country: '{{country()}}',
+    noOftalksTickets: '{{random(1,2,3,4,5)}}',
+    talksTicketType: '{{random("early", "regular", "vip")}}',
+    workshopTickets: '{{random(1,2,3,4,5)}}',
+    workshop: '{{random("Workshop A", "Workshop B", "Workshop C")}}'
+  }
+]
+
+https://www.json-generator.com/
+
+
+
