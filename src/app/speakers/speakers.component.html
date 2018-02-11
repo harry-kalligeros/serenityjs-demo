@@ -2,14 +2,14 @@
 <div class="row">
 	<div class="col-md-3">
 		<label class="control-label">Search Speaker</label>
-		<input class="form-control" type="text"     (keyup)="searchTerm$.next($event.target.value)">
+		<input class="form-control" type="text" class="speakers-searchbox" (keyup)="searchTerm$.next($event.target.value)">
 	</div>
 	<div class="col-md-9">
 		<div class="row">
-			<div class="col-sm-4" *ngFor="let row of filteredSpeakers">
-				<img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image"
+			<div class="col-sm-4 speaker-card" *ngFor="let row of filteredSpeakers">
+				<img class="rounded-circle speaker-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image"
 				    width="140" height="140">
-				<h5>{{ row.firstName }} {{ row.lastName }}</h5>
+				<h5 class="speaker-fullname">{{ row.firstName }} {{ row.lastName }}</h5>
 			</div>
 		</div>
 	</div>

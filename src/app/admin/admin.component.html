@@ -1,0 +1,13 @@
+<h1>Admin Panel</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6">
+			<h3>Talk seat reservations</h3>
+			<app-ticket-table [tickets]="talkTickets"></app-ticket-table>
+		</div>
+		<div class="col-sm-6">
+				<h3>Workshop reservations</h3>
+				<app-ticket-table [tickets]="workshopTickets"></app-ticket-table>
+		</div>
+	</div>
+</div>

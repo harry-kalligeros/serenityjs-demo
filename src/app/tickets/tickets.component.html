@@ -2,10 +2,10 @@
 
 <ul class="nav nav-tabs">
 	<li class="nav-item">
-		<a class="nav-link" [class.active]="!userOption || userOption==='talks'" href="#" (click)="selectEvent($event, 'talks')">Talks</a>
+		<a class="nav-link" id="talk-tickets" [class.active]="!userOption || userOption==='talks'" href="#" (click)="selectEvent($event, 'talks')">Talks</a>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link" [class.active]="userOption==='workshops'" href="#" (click)="selectEvent($event, 'workshops')">Workshops</a>
+		<a class="nav-link" id="workshop-tickets" [class.active]="userOption==='workshops'" href="#" (click)="selectEvent($event, 'workshops')">Workshops</a>
 	</li>
 </ul>
 <div [ngSwitch]='userOption'>
@@ -34,7 +34,7 @@
 							&euro; 40.00
 						</td>
 						<td class="col-sm-2">
-							<input type="number" style="width: 60px;" />
+							<input name="workshop-a" [(ngModel)]="tickets.workshopA" type="number" style="width: 60px;" />
 						</td>
 					</tr>
 					<tr>
@@ -47,10 +47,10 @@
 							</p>
 						</td>
 						<td class="col-sm-4">
-							&euro; 40.00
+							&euro; 60.00
 						</td>
 						<td class="col-sm-2">
-							<input type="number" style="width: 60px;" />
+							<input name="workshop-b" [(ngModel)]="tickets.workshopB"type="number" style="width: 60px;" />
 						</td>
 					</tr>
 					<tr>
@@ -63,10 +63,10 @@
 							</p>
 						</td>
 						<td class="col-sm-4">
-							&euro; 40.00
+							&euro; 80.00
 						</td>
 						<td class="col-sm-2">
-							<input type="number" style="width: 60px;" />
+							<input name="workshop-c" [(ngModel)]="tickets.workshopC" type="number" style="width: 60px;" />
 						</td>
 					</tr>
 				</tbody>
@@ -98,7 +98,7 @@
 							&euro; 40.00
 						</td>
 						<td class="col-sm-2">
-							<input type="number" style="width: 60px;" />
+							<input class="early-tickets" [(ngModel)]="tickets.earlyTickets" name="earlyTickets" type="number" style="width: 60px;" />
 						</td>
 					</tr>
 					<tr>
@@ -114,7 +114,7 @@
 							&euro; 60.00
 						</td>
 						<td class="col-sm-2">
-							<input type="number" style="width: 60px;" />
+							<input class="regular-tickets" [(ngModel)]="tickets.regularTickets" name="regularTickets" type="number" style="width: 60px;" />
 						</td>
 					</tr>
 					<tr>
@@ -127,10 +127,10 @@
 							</p>
 						</td>
 						<td class="col-sm-4" style="min-width: 100px;">
-							&euro; 240.00
+							&euro; 140.00
 						</td>
 						<td class="col-sm-2">
-							<input type="number" style="width: 60px;" />
+							<input class="vip-tickets" [(ngModel)]="tickets.vipTickets" name="vipTickets" type="number" style="width: 60px;" />
 						</td>
 					</tr>
 				</tbody>
@@ -138,9 +138,9 @@
 		</div>
 	</div>
 </div>
-<div class="row" style="margin-bottom: 80px">
+<div class="row" style="margin-top: 20px">
 	<div class="col-xs-12">
-		<a class="btn btn-lg btn-info" href="#" (click)="register($event)">Continue</a>
+		<a class="btn btn-lg btn-info" href="#" id="continueToRegistrationForm" (click)="fillPersonalInfo($event)">Continue</a>
 	</div>
 </div>
-<app-registration *ngIf="isRegistrationFormShown"></app-registration>
+<app-registration *ngIf="isRegistrationFormShown" [countries]="countries" (register)="register($event)"></app-registration>

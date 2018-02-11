@@ -6,49 +6,72 @@
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label">Fullname</label>
 					<div class="col-sm-8">
-						<input type="text" placeholder="Enter Full Name Here.." class="form-control">
+						<input [(ngModel)]="registration.fullname" type="text" placeholder="Enter Full Name Here.." class="form-control fullname"
+						    name="fullname">
 					</div>
 				</div>
 				<div class="form-group row">
-						<label class="col-sm-4 col-form-label">Nickname</label>
-						<div class="col-sm-8">
-							<input type="text" placeholder="Enter Full Name Here.." class="form-control">
-						</div>
+					<label class="col-sm-4 col-form-label">Nickname</label>
+					<div class="col-sm-8">
+						<input [(ngModel)]="registration.nickname" type="text" placeholder="Enter Full Name Here.." class="form-control nickname"
+						    name="nickname">
 					</div>
+				</div>
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label">Email Address</label>
 					<div class="col-sm-8">
-						<input type="text" placeholder="Enter Email Address Here.." class="form-control">
+						<input [(ngModel)]="registration.email" type="text" placeholder="Enter Email Address Here.." class="form-control email" name="email">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-4 col-form-label">Date of birth</label>
+					<div class="col-sm-8 input-group">
+						<span class="input-group-prepend">
+							<span class="input-group-text">
+									<i class="fa fa-calendar calendar-toggle" (click)="dp.toggle()"></i>
+							</span>
+						</span>
+						<input type="text"
+								class="form-control"
+								[minDate]="minDate"
+								[maxDate]="maxDate"
+								name="dateOfBirth"
+								#dp="bsDatepicker"
+								bsDatepicker [(bsValue)]="registration.dateOfBirth"
+								[bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }"
+								>
 					</div>
 				</div>
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label">Company</label>
 					<div class="col-sm-8">
-						<input type="text" placeholder="Enter Company Name Here.." class="form-control">
+						<input [(ngModel)]="registration.company" type="text" placeholder="Enter Company Name Here.." class="form-control company"
+						    name="company">
 					</div>
 				</div>
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label">Address</label>
 					<div class="col-sm-8">
-						<input type="text" placeholder="Enter Address Here.." class="form-control"/>
+						<input [(ngModel)]="registration.address" type="text" placeholder="Enter Address Here.." class="form-control address" name="address"
+						/>
 					</div>
 				</div>
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label">City</label>
 					<div class="col-sm-8">
-						<input type="text" placeholder="Enter City Name Here.." class="form-control">
+						<input [(ngModel)]="registration.ciry" type="text" placeholder="Enter City Name Here.." class="form-control city" name="city">
 					</div>
 				</div>
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label">Zip</label>
 					<div class="col-sm-8">
-						<input type="text" placeholder="Enter Zip Code Here.." class="form-control">
+						<input type="text" placeholder="Enter Zip Code Here.." class="form-control zip" name="zip">
 					</div>
 				</div>
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label">Country</label>
 					<div class="col-sm-8">
-						<select class="form-control">
+						<select class="form-control country" name="country" [(ngModel)]="registration.country">
 							<option>Select a country</option>
 							<option *ngFor="let country of countries" [value]="country.code">{{ country.value }}</option>
 						</select>
@@ -59,7 +82,7 @@
 				<!-- <button type="button" class="btn btn-lg btn-info">Submit</button> -->
 				<div class="row" style="margin-bottom: 80px">
 					<div class="col-xs-12">
-						<a class="btn btn-lg btn-info" href="#" routerLink="/payment">Continue</a>
+						<a class="btn btn-lg btn-info" id='continueToPayment' href="#" (click)="registerUser($event)">Continue</a>
 					</div>
 				</div>
 

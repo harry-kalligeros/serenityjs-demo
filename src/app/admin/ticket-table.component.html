@@ -1,0 +1,18 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>Ticket type</th>
+			<th>Quantity</th>
+			<th>Unit price</th>
+			<th>Price</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let row of tickets">
+			<td>{{ row.ticketType }}</td>
+			<td>{{ row.quantity }}</td>
+			<td>{{ row.unitPrice }} <span *ngIf="!!row.unitPrice">&euro;</span></td>
+			<td>{{ row.price }} &euro;</td>
+		</tr>
+	</tbody>
+</table>
