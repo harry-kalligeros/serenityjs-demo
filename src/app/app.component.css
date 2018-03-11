@@ -1,3 +1,9 @@
+:host {
+	display: flex;
+	flex-direction: column;
+}
 .container {
 	margin-bottom: 80px;
+	flex-grow: 1;
+	min-height: calc(100vh - 230px);
 }
