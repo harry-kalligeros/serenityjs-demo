@@ -1,27 +1,57 @@
-# SerenityjsDemo
+# SerenityJS Demo Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+This SerenityJS Demo Application demonstrates the use of SerenityJS and the screenplay pattern in a mock web application which concerns a conference for developers.
 
-## Development server
+The technology stack used in the demo involves:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+*	Typescript
+*	Angular 5
+*	SerenityJS
+* 	CucumberJS
+*	Protractor 5
 
-## Code scaffolding
+## Software requirements
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* [NodeJS](https://nodejs.org/en/download/)
+* [Java JDK >=8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+1. Clone the repo 
 
-## Running unit tests
+```
+git clone ... 
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Install angular/cli
+```
+npm install -g @angular/cli
+```
 
-## Running end-to-end tests
+3. Install the artefacts
+```
+cd <project directory>
+npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+4. Run the automation tests
+```
+ng e2e
+```
 
-## Further help
+5. View the reports at http://localhost:8080
+```
+npm run report
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## More documentation
+
+* [Serenity JS](http://serenity-js.org/)
+* [Cucumber](https://cucumber.io/)
+* [Protractor](https://www.protractortest.org/#/)
+* [Typescript](https://www.typescriptlang.org/)
+* [Angular](https://angular.io/)
+* [Cucumber-tsflow](https://www.npmjs.com/package/cucumber-tsflow)
+
+
