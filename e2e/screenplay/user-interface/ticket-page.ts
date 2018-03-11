@@ -16,22 +16,22 @@ export class TicketsPageUI {
 	static ContinueButton = Target.the('Continue button of the tickets section')
 		.located(by.id('continueToRegistrationForm'));
 
-	NoOfEarlyTickets = Target.the('Number of Early Tickets booked')
+	NoOfEarlyTickets = Target.the('Number of Early Tickets field')
 		.located(by.css('input[name="earlyTickets"]'));
 
-	NoOfRegularTickets = Target.the('Number of Regular Tickets booked')
+	NoOfRegularTickets = Target.the('Number of Regular Tickets field')
 		.located(by.css('input[name="regularTickets"]'));
 
-	NoOfVipTickets = Target.the('Number of Vip Tickets booked')
+	NoOfVipTickets = Target.the('Number of Vip Tickets field')
 		.located(by.css('input[name="vipTickets"]'));
 
-	NoOfWorkshopATickets = Target.the('Number of Workshop A Tickets booked')
+	NoOfWorkshopATickets = Target.the('Number of Workshop A Tickets field')
 		.located(by.css('input[name="workshop-a"]'));
 
-	NoOfWorkshopBTickets = Target.the('Number of Workshop B Tickets booked')
+	NoOfWorkshopBTickets = Target.the('Number of Workshop B Tickets field')
 		.located(by.css('input[name="workshop-b"]'));
 
-	NoOfWorkshopCTickets = Target.the('Number of Workshop C Tickets booked')
+	NoOfWorkshopCTickets = Target.the('Number of Workshop C Tickets field')
 		.located(by.css('input[name="workshop-c"]'));
 
 	static pickTickets() {

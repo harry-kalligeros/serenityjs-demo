@@ -4,7 +4,7 @@ import { by, element } from 'protractor';
 export class ThankPage {
 
 
-	static Message = Target.the('Message thanking the visitor for the registration')
+	static Message = Target.the('Thanking message for the registration')
 						.located(by.css('app-thankyou h1'));
 
 }

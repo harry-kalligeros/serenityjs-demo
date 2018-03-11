@@ -7,7 +7,6 @@ import { BookTickets } from './book-tickets';
 export type TalkTicketType = 'early' | 'regular' | 'vip';
 export class BookTalkTickets implements Task {
 	ticketType: TalkTicketType;
-	numberOfTickets: number;
 
 	public static ofQuantity(noOfTickets: number) {
 		return new BookTalkTickets(noOfTickets);
@@ -24,10 +23,10 @@ export class BookTalkTickets implements Task {
 			BookTickets
 				.in(TicketsPageUI.TalksTab)
 				.ofType(this.ticketType)
-				.ofQuantity(this.noOfTickets)
+				.ofQuantity(this.numberOfTickets)
 		);
 	}
 
-	constructor(private noOfTickets: number) { }
+	constructor(private numberOfTickets: number) { }
 }
 

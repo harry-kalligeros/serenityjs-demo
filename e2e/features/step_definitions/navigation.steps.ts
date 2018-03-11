@@ -5,7 +5,7 @@ import { expect } from '../../expect';
 import { NavigateToMenu } from '../../screenplay/tasks/navigate-to-menu';
 import { given, when, binding } from 'cucumber-tsflow';
 import { World } from '../support/world';
-import { Stage } from 'serenity-js/lib/screenplay-protractor';
+import { Stage, Task } from 'serenity-js/lib/screenplay-protractor';
 
 @binding([World])
 class NavigationSteps {
@@ -17,13 +17,13 @@ class NavigationSteps {
 	}
 
 	@given(/that (.*) visits the conference page$/)
-	visitTheConferencePage(name: string) {
+	public visitTheConferencePage(name: string) {
 			return this.stage.theActorCalled(name).attemptsTo(
 				Start.withTheConferenceHomepage());
 	}
 
 	@when(/^\s?he navigates to menu called '(.*)'$/)
-	navigateToMenuCalled(name: string) {
+	public navigateToMenuCalled(name: string): Promise<void> {
 		return this.stage.theActorInTheSpotlight().attemptsTo(
 			NavigateToMenu.called(name)
 		);

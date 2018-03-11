@@ -36,7 +36,7 @@ export class DatePick implements Interaction {
 	}
 
 	public toString() {
-		return `#actor picks the date ${this.date.toLocaleDateString()} on ${this.target}`;
+		return `#actor picks the date ${this.date.toLocaleDateString().split('-').reverse().join('/')} on ${this.target}`;
 	}
 
 	private async pickYear(year: number, datePickerContainer: ElementFinder, navigationView: ElementFinder): Promise<void> {

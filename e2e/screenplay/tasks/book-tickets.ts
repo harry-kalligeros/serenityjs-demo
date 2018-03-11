@@ -22,7 +22,7 @@ export class BookTickets implements Task {
 		return this;
 	}
 
-	@step('{0} buys a quantity of #numberOfTickets')
+	@step('{0} buys a quantity of #numberOfTickets tickets of type #ticketType')
 	performAs(actor: PerformsTasks): PromiseLike<void> {
 		return actor.attemptsTo(
 			Click.on(this.tab),

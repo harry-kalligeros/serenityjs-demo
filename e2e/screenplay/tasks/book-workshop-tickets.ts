@@ -17,15 +17,15 @@ export class BookWorkshopTickets implements Task {
 		return this;
 	}
 
-	@step('{0} buys a quantity of #noOfWorkshopTickets for the workshop #workshop')
+	@step('{0} buys a quantity of #numberOfWorkshopTickets for the workshop #workshop')
 	performAs(actor: PerformsTasks): PromiseLike<void> {
 		return actor.attemptsTo(
 			BookTickets
 				.in(TicketsPageUI.WorkshopsTab)
 				.ofType(this.workshop)
-				.ofQuantity(this.noOfTickets)
+				.ofQuantity(this.numberOfWorkshopTickets)
 		);
 	}
 
-	constructor(private noOfTickets: number) { }
+	constructor(private numberOfWorkshopTickets: number) { }
 }
