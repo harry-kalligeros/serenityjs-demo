@@ -40,9 +40,9 @@ class RegistrationSteps {
 		);
 	}
 
-	@given(/^that (?:.*) gets access to the ticket reservation page$/)
-	accessTicketReservationPage() {
-		return this.stage.theActorInTheSpotlight().attemptsTo(
+	@given(/^that (.*) gets access to the ticket reservation page$/)
+	accessTicketReservationPage(name: string) {
+		return this.stage.theActorCalled(name).attemptsTo(
 			Start.withTheConferenceHomepage(),
 			Register.himself()
 		);
@@ -62,7 +62,7 @@ class RegistrationSteps {
 		);
 	}
 
-	@when(/^he fills the registration form with his (.*)$/)
+	@when(/^he fills the registration form with his personal info: (.*)$/)
 	fillPersonalInfo(personalInfo: string) {
 		return this.stage.theActorInTheSpotlight().attemptsTo(
 			FillPersonalInfo.with(personalInfo)
