@@ -21,7 +21,7 @@ The technology stack used in the demo involves:
 1. Clone the repo 
 
 ```
-git clone ... 
+git clone https://github.com/harry-kalligeros/serenityjs-demo.git
 ```
 
 2. Install angular/cli
@@ -31,7 +31,7 @@ npm install -g @angular/cli
 
 3. Install the artefacts
 ```
-cd <project directory>
+cd serenityjs-demo
 npm install
 ```
 
