@@ -40,7 +40,7 @@ npm install
 npm run e2e
 ```
 > ### Note:
-> If the `serenity update` command fails to download the Serenity-CLI JAR file, you can [download](https://dl.bintray.com/serenity/maven/net/serenity-bdd/serenity-cli/1.8.0/:serenity-cli-1.8.0-all.jar) it manually and place it under the ./node_modules/serenity-cli/.cache folder
+> If the `serenity update` command fails to download the Serenity-CLI JAR file, you can [download](https://dl.bintray.com/serenity/maven/net/serenity-bdd/serenity-cli/1.8.0/serenity-cli-1.8.0-all.jar) it manually and place it under the ./node_modules/serenity-cli/.cache folder
 
 
 5. View the reports at http://localhost:8080
